@@ -1,0 +1,32 @@
+<div class="container">
+
+  <button [routerLink]="['/users']" class="back-button">Back</button>
+
+
+  <!-- Form -->
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label>Name:</label>
+    <input formControlName="name" type="text" />
+    <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+      Name is required.
+    </div>
+
+    <label>Email:</label>
+    <input formControlName="email" type="email" />
+    <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+      Enter a valid email.
+    </div>
+
+    <label>Role:</label>
+    <select formControlName="role">
+      <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+    </select>
+
+    <label>Status:</label>
+    <select formControlName="status">
+      <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+    </select>
+
+    <button type="submit" [disabled]="userForm.invalid">Save</button>
+  </form>
+</div>

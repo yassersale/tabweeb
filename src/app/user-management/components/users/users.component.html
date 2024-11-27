@@ -1,0 +1,46 @@
+<div>
+  <h2>User List</h2>
+
+
+      <div>
+
+        <label>Filter by Role:</label>
+        <select [(ngModel)]="selectedRole" (change)="applyFilters()">
+          <option [value]="undefined">All</option>
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+
+        <label>Filter by Status:</label>
+        <select [(ngModel)]="selectedStatus" (change)="applyFilters()">
+          <option [value]="undefined">All</option>
+          <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+        </select>
+        <button [routerLink]="['./add']" class="new-button">New User</button>
+
+      </div>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers | async">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.status }}</td>
+        <td>
+          <button [routerLink]="['./edit', user.id]" >Edit</button>
+          <button (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
