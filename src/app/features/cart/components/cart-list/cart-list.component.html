@@ -1,0 +1,52 @@
+<div class="cart-container mat-elevation-z4">
+  <h2> Shopping Cart</h2>
+  <table mat-table [dataSource]="(cartItems$ | async) || [] " class="mat-elevation-z8">
+    <!-- Product Name Column -->
+    <ng-container matColumnDef="productName">
+      <th mat-header-cell *matHeaderCellDef> Product </th>
+      <td mat-cell *matCellDef="let item"> {{ item.name }} </td>
+    </ng-container>
+
+    <!-- Quantity Column -->
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef> Quantity </th>
+      <td mat-cell *matCellDef="let item">
+        <button mat-icon-button color="primary" (click)="updateQuantity(item, -1)" [disabled]="item.quantity <= 1">
+          <mat-icon>remove</mat-icon>
+        </button>
+        {{ item.quantity }}
+        <button mat-icon-button color="primary" (click)="updateQuantity(item, 1)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let item"> ${{ item.price }} </td>
+    </ng-container>
+
+    <!-- Total Column -->
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef> Total </th>
+      <td mat-cell *matCellDef="let item"> ${{ item.price * item.quantity }} </td>
+    </ng-container>
+
+    <!-- Remove Button Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let item">
+        <button mat-button color="warn" (click)="removeItemFromCart(item)">Remove</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div class="cart-summary">
+    <h3>Total: ${{ calculateTotal() | async}}</h3>
+    <button mat-raised-button color="primary" (click)="proceedToCheckout()">Proceed to Checkout</button>
+  </div>
+</div>

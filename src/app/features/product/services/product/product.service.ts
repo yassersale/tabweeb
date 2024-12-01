@@ -1,0 +1,175 @@
+import { Injectable } from "@angular/core";
+import { Product } from "../../models/product-model";
+import { BehaviorSubject, Observable } from "rxjs";
+
+@Injectable({
+  providedIn: "root",
+})
+export class ProductService {
+  private productsSubject = new BehaviorSubject<Product[]>([
+    {
+      id: 1,
+      name: "Hydrogen",
+      price: 1.0079,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 2,
+      name: "Helium",
+      price: 4.0026,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 3,
+      name: "Lithium",
+      price: 6.941,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 4,
+      name: "Beryllium",
+      price: 9.0122,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 5,
+      name: "Boron",
+      price: 10.811,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 6,
+      name: "Carbon",
+      price: 12.0107,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 7,
+      name: "Nitrogen",
+      price: 14.0067,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 8,
+      name: "Oxygen",
+      price: 15.9994,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 9,
+      name: "Fluorine",
+      price: 18.9984,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 10,
+      name: "Neon",
+      price: 20.1797,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 11,
+      name: "Sodium",
+      price: 22.9897,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 12,
+      name: "Magnesium",
+      price: 24.305,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 13,
+      name: "Aluminum",
+      price: 26.9815,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 14,
+      name: "Silicon",
+      price: 28.0855,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 15,
+      name: "Phosphorus",
+      price: 30.9738,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 16,
+      name: "Sulfur",
+      price: 32.065,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 17,
+      name: "Chlorine",
+      price: 35.453,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 18,
+      name: "Argon",
+      price: 39.948,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 19,
+      name: "Potassium",
+      price: 39.0983,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+    {
+      id: 20,
+      name: "Calcium",
+      price: 40.078,
+      image: "https://www.tabweeb.com.sa/assets/web/images/logo.png",
+      description: "This is Product 1. It is a high-quality item.",
+      specifications: ["Specification 1", "Specification 2", "Specification 3"],
+    },
+  ]);
+
+  getProducts(): Observable<Product[]> {
+    return this.productsSubject.asObservable();
+  }
+}

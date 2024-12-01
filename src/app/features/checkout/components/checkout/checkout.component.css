@@ -1,0 +1,14 @@
+.checkout-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-card {
+  max-width: 800px;
+  width: 100%;
+}
+
+.stepper {
+  margin-bottom: 20px;
+}

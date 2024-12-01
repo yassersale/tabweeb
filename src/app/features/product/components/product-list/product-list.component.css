@@ -1,0 +1,67 @@
+/* Container styling */
+div {
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Filter controls styling */
+div label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+div select {
+  margin-right: 20px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1976d2;
+  color: white;
+  padding: 8px 12px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cart-button:hover {
+  background-color: #155a9c;
+}
+
+mat-icon {
+  margin-right: 5px;
+}
+
+.shopping-cart-button {
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  background-color: #007bff !important;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  float: right;
+}
+
+.shopping-cart-button:hover {
+  background-color: #0056b3;
+}
+
+.shopping-cart-button:active {
+  background-color: #003f8a;
+}

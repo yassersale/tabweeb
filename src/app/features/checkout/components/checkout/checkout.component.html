@@ -1,0 +1,19 @@
+<div class="checkout-container">
+  <mat-card class="checkout-card">
+    <mat-stepper linear class="stepper">
+      <mat-step>
+        <ng-template matStepLabel>Shipping Details</ng-template>
+        <button mat-button routerLink="shipping">Proceed to Shipping</button>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Payment Methods</ng-template>
+        <button mat-button routerLink="payment">Proceed to Payment</button>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Order Review</ng-template>
+        <button mat-button routerLink="review">Review Order</button>
+      </mat-step>
+    </mat-stepper>
+    <router-outlet></router-outlet>
+  </mat-card>
+</div>

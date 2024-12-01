@@ -1,0 +1,25 @@
+<div class="container mat-elevation-z8">
+  <h2>
+    Product List
+
+    <button [routerLink]="['/cart']" class="shopping-cart-button">
+      <mat-icon class="">add_shopping_cart</mat-icon>
+    </button>
+  </h2>
+
+  <div class="product-list" infiniteScroll>
+    <mat-grid-list cols="4" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let product of dataSource | async">
+        <img mat-card-image [src]="product.image" alt="{{ product.name }}" (click)="viewProduct(product)" />
+        <mat-grid-tile-header>
+          <span>{{ product.name }}</span>
+          <span class="price">${{ product.price }}</span>
+        </mat-grid-tile-header>
+        <div class="cart-button" (click)="addItemToCart(product)">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>

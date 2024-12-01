@@ -1,0 +1,38 @@
+<div class="payment-container">
+  <mat-card class="payment-card">
+    <mat-card-header>
+      <mat-card-title>Payment Methods</mat-card-title>
+      <mat-card-subtitle>Select your preferred method</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-list>
+      <mat-list-item>
+        <mat-icon matListIcon>credit_card</mat-icon>
+        <h3 matLine>Credit/Debit Card</h3>
+        <p matLine>Visa, MasterCard, AmEx</p>
+        <button mat-button color="primary">Select</button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item>
+        <mat-icon matListIcon>account_balance</mat-icon>
+        <h3 matLine>Bank Transfer</h3>
+        <p matLine>Fast and secure</p>
+        <button mat-button color="primary">Select</button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item>
+        <mat-icon matListIcon>payments</mat-icon>
+        <h3 matLine>PayPal</h3>
+        <p matLine>Worldwide online payments</p>
+        <button mat-button color="primary">Select</button>
+      </mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" routerLink="/checkout/review">Next: review</button>
+  </mat-card>
+</div>

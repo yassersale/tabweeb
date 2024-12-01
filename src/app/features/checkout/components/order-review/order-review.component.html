@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title>Order Confirmation</mat-card-title>
+  <mat-divider></mat-divider>
+  <p>Your order has been placed successfully!</p>
+  <mat-list>
+    <mat-list-item *ngFor="let item of cartService.cartItems$ | async">
+      <h3 matLine>{{ item.name }}</h3>
+      <p matLine>Price: ${{ item.price }}</p>
+    </mat-list-item>
+  </mat-list>
+  <p>Total: ${{ cartService.getTotalPrice() }}</p>
+  <button mat-raised-button color="primary" (click)="confirmOrder()" >Back to Home</button>
+</mat-card>
